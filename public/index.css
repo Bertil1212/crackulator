@@ -1,0 +1,181 @@
+*{
+    box-sizing: border-box;
+    margin: 0px;
+    padding: 0px;
+}
+
+:root{
+    --background: #2D2D2D;
+    --pharmacyblue: #5880B9;
+    --cocainwhite: #FDFFFC;
+}
+
+@font-face {
+    font-family: font;
+    src: url(Ubuntu-Regular.ttf);
+}
+
+body{
+    overflow: hidden;
+}
+
+
+/*Start Screen*/
+.startScreen{
+    overflow: hidden;
+    height: 100vh;
+    background-color: var(--background);
+}
+
+
+.txt{
+    font-family: 'font';
+    color: var(--cocainwhite);
+}
+
+.cencetcontent{
+    width: 100vw;
+    display: flex;
+    position: relative;
+    justify-content: center;
+}
+
+.titleRow{
+    height: 10vh;   
+}
+
+.titleTXT{
+    padding-top: 20px;
+    padding-bottom: 20px;
+    font-size: 7vh;
+    font-family: 'font';
+    color: var(--pharmacyblue);
+    
+}
+
+.startScreen .sub1{
+    font-family: 'font';
+    margin-top: 2vh;
+    text-align: center;
+    font-size:  2.4vh;
+}
+
+.startScreen .presstostartrow{
+    padding-top: 16vh;
+    text-align: center;
+    font-size: 2.9vh;
+    font-family: 'font';
+}
+
+.startScreen #fullscreenButton{
+    margin-top: 3vh;
+    background-color: var(--pharmacyblue);
+    border: 0px;
+    height: 6vh;
+    width: 25vh;
+    
+}
+
+.fullscreenButtonTXT{
+    color: white;
+    font-size: 2vh;
+    font-family: 'font';
+    
+}
+
+.startScreen .disclamerrow{
+    font-family: 'font';
+    position: absolute;
+    bottom: 0px;
+    padding-bottom: 20px;
+    padding-left: 20px;
+    padding-right: 20px;
+    font-size: 2vh;
+}
+
+
+/*Main Screen*/
+
+.mainScreen{
+    height: 100vh;
+    background-color: var(--background);
+}
+
+.dropdownrow{
+    margin-top: 20px;
+}
+.dropdowninnerrow{
+    width: 20vw;
+}
+
+.pickyourpoison{
+    line-height: 5vh;
+    text-align: center;
+    width: 40vw;
+    font-family: 'font';
+    color: var(--cocainwhite);
+}
+
+.dropdownbutton{
+    height: 5vh;
+    width: 40vw;
+    background-color: var(--pharmacyblue);
+    margin-right: 15px;
+    border-radius: 60px;
+    overflow: hidden;
+    display: flex;
+    position: relative;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+
+.dropdownarrow{
+    height: 80%;
+    padding-right: 6px;
+    padding-left: 6px;  
+}
+
+.spinopen{
+    animation-name: spinopenani;
+    animation-duration: 0.5s;
+    animation-fill-mode: forwards
+}
+
+.spinclose{
+    animation-name: spincloseani;
+    animation-duration: 0.5s;
+    animation-fill-mode: forwards
+}
+
+@keyframes spinopenani{
+    0% {transform: rotate(0deg);}
+    100% {transform: rotate(180deg);}
+}
+
+@keyframes spincloseani{
+    0% {transform: rotate(180deg);}
+    100% {transform: rotate(0deg);}
+    
+}
+
+
+
+
+
+
+
+
+
+
+
+.hidden{
+    overflow: hidden;
+    height: 0vh !important;
+}
+
+
+
+
+
+
