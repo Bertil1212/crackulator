@@ -35,7 +35,7 @@
       <div id="start" class="startScreen">
         
         <div class="titleRow cencetcontent">
-          <div class="titleTXT txt">Crackulator test</div>
+          <div class="titleTXT txt">Crackulator</div>
         </div>
         
         <div class="sub1row cencetcontent">
@@ -67,9 +67,15 @@
         <div id="dropdowninnerrow" class="dropdowninnerrow cencetcontent">
           <div class="pickyourpoison">Pick your poison</div>
           
-          <div class="dropdownbutton">
-            <div class="dropdowntxt">
-              
+          <div id="dropdownbutton" class="dropdownbutton">
+            <div class="dropdowntextcontainer">
+              <div onclick="selectDrug(this.id)" id="drug1"     class="drugtxt selected">Amfetamine</div>
+              <div class="line"></div>
+              <div onclick="selectDrug(this.id)" id="drug2"  class="drugtxt">Cocain</div>
+              <div class="line"></div>
+              <div onclick="selectDrug(this.id)" id="drug3"    class="drugtxt">Ketamine</div>
+              <div class="line"></div>
+              <div onclick="selectDrug(this.id)" id="drug4"        class="drugtxt">MDMA</div>          
             </div>
 
             <img id="dropdownarrow" class="dropdownarrow" src="/images/dropdownarrow.png" alt="dropdownarrow">
@@ -85,16 +91,44 @@
       </div>
       
         <script>
+
+
+          selectedsubstance = "Amfetamine";
+
           dropdownenabled = false;
           
+          function selectDrug(clicked){
+            firstline = document.getElementById("drug1");
+            oldDrugtxt = firstline.innerText;
+            selectedline = document.getElementById(clicked);
+
+            newtxt = selectedline.innerHTML;
+            selectedsubstance = newtxt;
+
+            selectedline.innerHTML = oldDrugtxt;
+            firstline.innerHTML = newtxt;
+
+            
+
+          }
+
           /*Dropdownmenu*/
           function ToggleDropDown(){
             arrow = document.getElementById("dropdownarrow");
+            box = document.getElementById("dropdownbutton");
             if(!dropdownenabled){
+
+              box.classList.remove("closedropdown");
+              box.classList.add("opendropdown");
+
               arrow.classList.remove("spinclose")
               arrow.classList.add("spinopen");
               dropdownenabled = true;
             }else{
+
+              box.classList.add("closedropdown");
+              box.classList.remove("opendropdown");
+
               arrow.classList.remove("spinopen");
               arrow.classList.add("spinclose");
               dropdownenabled = false;
